@@ -1,8 +1,8 @@
-package io.zchiye.leetcode.exercise.top150arrays;
+package io.zchiye.leetcode.exercise.top150.arrays;
 
 import java.util.Arrays;
 
-public class Lc121MaxProfit {
+public class Lc122MaxProfit {
 
     static class Solution {
         public int maxProfit(int[] prices) {
@@ -12,20 +12,21 @@ public class Lc121MaxProfit {
             int result = 0;
             int min = prices[0];
             for (int i = 1; i < prices.length; i++) {
-                int price = prices[i];
-                if (price > min) {
-                    result = Math.max(result, price - min);
-                }
-                if (price < min) {
-                    min = price;
+                if (prices[i] > prices[i - 1]) {
+                    result += (prices[i] - prices[i - 1]);
+                } else {
+//                    result += (prices[i - 1] - min);
+                    min = prices[i];
                 }
             }
+
             return result;
         }
     }
 
     public static void main(String[] args) {
-        testCase(new int[]{7, 1, 5, 3, 6, 4}, 5);
+        testCase(new int[]{7, 1, 5, 3, 6, 4}, 7);
+        testCase(new int[]{1, 2, 3, 4, 5}, 4);
         testCase(new int[]{7, 6, 4, 3, 1}, 0);
     }
 

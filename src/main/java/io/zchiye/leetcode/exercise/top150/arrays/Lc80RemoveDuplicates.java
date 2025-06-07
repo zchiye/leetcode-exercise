@@ -1,8 +1,8 @@
-package io.zchiye.leetcode.exercise.top150arrays;
+package io.zchiye.leetcode.exercise.top150.arrays;
 
 import java.util.Arrays;
 
-public class Lc26RemoveDuplicates {
+public class Lc80RemoveDuplicates {
 
     static class Solution {
         public int removeDuplicates(int[] nums) {
@@ -10,20 +10,30 @@ public class Lc26RemoveDuplicates {
             if (nums.length <= 0) {
                 return result;
             }
+
+            boolean hasSame = false;
             int last = nums[result++];
             for (int i = 1; i < nums.length; i++) {
-                if (nums[i] != last) {
-                    nums[result++] = nums[i];
+                int num = nums[i];
+                if (num == last) {
+                    if (!hasSame) {
+                        hasSame = true;
+                        nums[result++] = num;
+                    }
+                } else {
+                    hasSame = false;
+                    nums[result++] = num;
                 }
-                last = nums[i];
+                last = num;
             }
+
             return result;
         }
     }
 
     public static void main(String[] args) {
-        testCase(new int[]{1, 1, 2});
-        testCase(new int[]{0, 0, 1, 1, 1, 2, 2, 3, 3, 4});
+        testCase(new int[]{1, 1, 1, 2, 2, 3});
+        testCase(new int[]{0, 0, 1, 1, 1, 1, 2, 3, 3});
     }
 
     private static void testCase(int[] nums) {

@@ -1,4 +1,4 @@
-package io.zchiye.leetcode.exercise.top150arrays;
+package io.zchiye.leetcode.exercise.top150.arrays;
 
 import java.util.Arrays;
 
