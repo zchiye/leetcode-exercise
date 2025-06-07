@@ -1,4 +1,4 @@
-package io.zchiye.leetcode.exercise;
+package io.zchiye.leetcode.exercise.top150arrays;
 
 import org.apache.commons.lang3.RandomStringUtils;
 
