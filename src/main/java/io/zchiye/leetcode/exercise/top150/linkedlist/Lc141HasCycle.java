@@ -30,14 +30,17 @@ public class Lc141HasCycle {
         ListNode l1 = ListNode.buildFromArray(new int[]{3, 2, 0, -4});
         l1.addCycle(1);
         System.out.println(solution.hasCycle(l1));
+        System.out.println(l1);
 
-        ListNode l2 = ListNode.buildFromArray(new int[]{1,2});
+        ListNode l2 = ListNode.buildFromArray(new int[]{1, 2});
         l2.addCycle(0);
         System.out.println(solution.hasCycle(l2));
+        System.out.println(l2);
 
         ListNode l3 = ListNode.buildFromArray(new int[]{1});
         l3.addCycle(-1);
         System.out.println(solution.hasCycle(l3));
+        System.out.println(l3);
     }
 
 }
