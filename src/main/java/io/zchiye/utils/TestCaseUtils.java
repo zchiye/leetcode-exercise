@@ -36,6 +36,7 @@ public class TestCaseUtils {
         System.out.println("result = " + resultStr);
         String expectStr = resultFormat != null ? resultFormat.apply(expect) : expect.toString();
         System.out.println("pass : " + (Objects.equals(resultStr, expectStr)));
+        System.out.println("-----------------------------------------------------------------------------------------");
     }
 
 }

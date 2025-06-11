@@ -62,6 +62,7 @@ public class TreeUtils {
 
         // 此时，已经将所有需要显示的元素储存到了二维数组中，将其拼接并打印即可
         StringBuilder sb = new StringBuilder();
+        sb.append('\n');
         for (String[] line : res) {
             for (int i = 0; i < line.length; i++) {
                 sb.append(line[i]);

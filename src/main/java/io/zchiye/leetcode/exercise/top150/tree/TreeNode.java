@@ -46,4 +46,9 @@ public class TreeNode {
         return root;
     }
 
+    @Override
+    public String toString() {
+        return TreeUtils.toString(this);
+    }
+
 }
