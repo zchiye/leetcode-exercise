@@ -2,6 +2,16 @@ package io.zchiye.leetcode.exercise.top150.tree;
 
 public class TreeUtils {
 
+    public static boolean isSameTree(TreeNode p, TreeNode q) {
+        if (p == q) {
+            return true;
+        }
+        if (p == null || q == null) {
+            return false;
+        }
+        return p.val == q.val && isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
+    }
+
     public static int maxDepth(TreeNode root) {
         if (root == null) {
             return 0;

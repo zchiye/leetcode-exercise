@@ -51,4 +51,12 @@ public class TreeNode {
         return TreeUtils.toString(this);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof TreeNode) {
+            return TreeUtils.isSameTree(this, (TreeNode) o);
+        }
+        return false;
+    }
+
 }
