@@ -26,6 +26,11 @@ public class TestCaseUtils {
     }
 
     public static <T, S, R> void testCase(T input1, S input2, BiFunction<T, S, R> function, R expect,
+                                          Function<T, String> inputFormat1, Function<S, String> inputFormat2) {
+        testCase(input1, input2, function, expect, inputFormat1, inputFormat2, null);
+    }
+
+    public static <T, S, R> void testCase(T input1, S input2, BiFunction<T, S, R> function, R expect,
                                           Function<T, String> inputFormat1, Function<S, String> inputFormat2, Function<R, String> resultFormat) {
         System.out.println();
         String input1Str = inputFormat1 != null ? inputFormat1.apply(input1) : input1.toString();
