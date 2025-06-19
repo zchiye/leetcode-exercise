@@ -159,6 +159,7 @@ public class Lc224Calculate {
             return nums.pop();
         }
 
+
         private int calOpResult(Stack<Integer> nums, char op) {
             Integer num2 = nums.empty() ? null : nums.pop();
             Integer num1 = nums.empty() ? null : nums.pop();
