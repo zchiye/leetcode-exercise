@@ -17,7 +17,9 @@ public class TestCaseUtils {
         R result = function.apply(input);
         System.out.println("result = " + result);
         System.out.println("expect = " + expect);
-        System.out.println("pass : " + (Objects.equals(result, expect)));
+        boolean pass = (Objects.equals(result, expect));
+        System.out.println("pass : " + pass);
+        assert pass;
         System.out.println("-----------------------------------------------------------------------------------------");
     }
 
@@ -42,7 +44,9 @@ public class TestCaseUtils {
         System.out.println("result = " + resultStr);
         String expectStr = resultFormat != null ? resultFormat.apply(expect) : expect.toString();
         System.out.println("expect = " + expectStr);
-        System.out.println("pass : " + (Objects.equals(result, expect)));
+        boolean pass = (Objects.equals(result, expect));
+        System.out.println("pass : " + pass);
+        assert pass;
         System.out.println("-----------------------------------------------------------------------------------------");
     }
 
