@@ -1,6 +1,7 @@
 package io.zchiye.utils;
 
 import java.util.Objects;
+import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 
@@ -49,5 +50,30 @@ public class TestCaseUtils {
         assert pass;
         System.out.println("-----------------------------------------------------------------------------------------");
     }
+
+
+    public static <T, S> void testCaseVoid(T input1, S input2, BiConsumer<T, S> function, T expect) {
+        testCaseVoid(input1, input2, function, expect, null, null, null);
+    }
+
+    public static <T, S> void testCaseVoid(T input1, S input2, BiConsumer<T, S> function, T expect,
+                                           Function<T, String> inputFormat1, Function<S, String> inputFormat2, BiFunction<T, T, Boolean> equalizer) {
+        System.out.println();
+        String input1Str = inputFormat1 != null ? inputFormat1.apply(input1) : input1.toString();
+        String input2Str = inputFormat2 != null ? inputFormat2.apply(input2) : input2.toString();
+        System.out.println("input1 : " + input1Str);
+        System.out.println("input2 : " + input2Str);
+//        R result = function.apply(input1, input2);
+        function.accept(input1, input2);
+        String resultStr = inputFormat1 != null ? inputFormat1.apply(input1) : input1.toString();
+        System.out.println("result = " + resultStr);
+        String expectStr = inputFormat1 != null ? inputFormat1.apply(expect) : expect.toString();
+        System.out.println("expect = " + expectStr);
+        boolean pass = equalizer != null ? equalizer.apply(input1, expect) : (Objects.equals(input1, expect));
+        System.out.println("pass : " + pass);
+        assert pass;
+        System.out.println("-----------------------------------------------------------------------------------------");
+    }
+
 
 }

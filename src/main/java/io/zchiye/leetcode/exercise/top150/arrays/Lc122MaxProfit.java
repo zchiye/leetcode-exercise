@@ -10,13 +10,12 @@ public class Lc122MaxProfit {
                 return 0;
             }
             int result = 0;
-            int min = prices[0];
+            // 贪心法，只要今天比明天的高，那么今天买明天卖一定是赚的
             for (int i = 1; i < prices.length; i++) {
                 if (prices[i] > prices[i - 1]) {
                     result += (prices[i] - prices[i - 1]);
                 } else {
 //                    result += (prices[i - 1] - min);
-                    min = prices[i];
                 }
             }
 
