@@ -26,8 +26,8 @@ public class Lc167TwoSum {
 
     public static void main(String[] args) {
         Solution solution = new Solution();
-        TestCaseUtils.testCase(new int[]{2, 7, 11, 15}, 9, solution::twoSum, new int[]{1, 2}, Arrays::toString, null, Arrays::toString);
-        TestCaseUtils.testCase(new int[]{2, 3, 4}, 6, solution::twoSum, new int[]{1, 3}, Arrays::toString, null, Arrays::toString);
-        TestCaseUtils.testCase(new int[]{-1, 0}, -1, solution::twoSum, new int[]{1, 2}, Arrays::toString, null, Arrays::toString);
+        TestCaseUtils.testCaseTwo(new int[]{2, 7, 11, 15}, 9, solution::twoSum, new int[]{1, 2}, Arrays::toString, null, Arrays::toString);
+        TestCaseUtils.testCaseTwo(new int[]{2, 3, 4}, 6, solution::twoSum, new int[]{1, 3}, Arrays::toString, null, Arrays::toString);
+        TestCaseUtils.testCaseTwo(new int[]{-1, 0}, -1, solution::twoSum, new int[]{1, 2}, Arrays::toString, null, Arrays::toString);
     }
 }

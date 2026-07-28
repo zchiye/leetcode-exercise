@@ -33,8 +33,8 @@ public class Lc392IsSubsequence {
 
     public static void main(String[] args) {
         Solution solution = new Solution();
-        TestCaseUtils.testCase("abc", "ahbgdc", solution::isSubsequence, true);
-        TestCaseUtils.testCase("axc", "ahbgdc", solution::isSubsequence, false);
+        TestCaseUtils.testCaseTwo("abc", "ahbgdc", solution::isSubsequence, true);
+        TestCaseUtils.testCaseTwo("axc", "ahbgdc", solution::isSubsequence, false);
     }
 
 }

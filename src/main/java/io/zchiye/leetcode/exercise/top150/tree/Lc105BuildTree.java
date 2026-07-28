@@ -50,11 +50,11 @@ public class Lc105BuildTree {
         int[] pre1 = new int[]{3, 9, 20, 15, 7};
         int[] in1 = new int[]{9, 3, 15, 20, 7};
         TreeNode e1 = TreeNode.buildFromArray(new Integer[]{3, 9, 20, null, null, 15, 7});
-        TestCaseUtils.testCase(pre1, in1, solution::buildTree, e1, Arrays::toString, Arrays::toString);
+        TestCaseUtils.testCaseTwo(pre1, in1, solution::buildTree, e1, Arrays::toString, Arrays::toString);
 
         int[] pre2 = new int[]{-1};
         int[] in2 = new int[]{-1};
         TreeNode e2 = TreeNode.buildFromArray(new Integer[]{-1});
-        TestCaseUtils.testCase(pre2, in2, solution::buildTree, e2, Arrays::toString, Arrays::toString);
+        TestCaseUtils.testCaseTwo(pre2, in2, solution::buildTree, e2, Arrays::toString, Arrays::toString);
     }
 }

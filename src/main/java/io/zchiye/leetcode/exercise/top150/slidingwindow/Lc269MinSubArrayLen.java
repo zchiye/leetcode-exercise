@@ -48,10 +48,10 @@ public class Lc269MinSubArrayLen {
 
     public static void main(String[] args) {
         Solution solution = new Solution();
-        TestCaseUtils.testCase(7, new int[]{2, 3, 1, 2, 4, 3}, solution::minSubArrayLen, 2, null, Arrays::toString, null);
-        TestCaseUtils.testCase(4, new int[]{1, 4, 4}, solution::minSubArrayLen, 1, null, Arrays::toString, null);
-        TestCaseUtils.testCase(11, new int[]{1, 1, 1, 1, 1, 1, 1, 1}, solution::minSubArrayLen, 0, null, Arrays::toString, null);
-        TestCaseUtils.testCase(11, new int[]{1, 2, 3, 4, 5}, solution::minSubArrayLen, 3, null, Arrays::toString, null);
+        TestCaseUtils.testCaseTwo(7, new int[]{2, 3, 1, 2, 4, 3}, solution::minSubArrayLen, 2, null, Arrays::toString, null);
+        TestCaseUtils.testCaseTwo(4, new int[]{1, 4, 4}, solution::minSubArrayLen, 1, null, Arrays::toString, null);
+        TestCaseUtils.testCaseTwo(11, new int[]{1, 1, 1, 1, 1, 1, 1, 1}, solution::minSubArrayLen, 0, null, Arrays::toString, null);
+        TestCaseUtils.testCaseTwo(11, new int[]{1, 2, 3, 4, 5}, solution::minSubArrayLen, 3, null, Arrays::toString, null);
     }
 
 }

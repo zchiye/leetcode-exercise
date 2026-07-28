@@ -8,33 +8,41 @@ import java.util.function.Function;
 public class TestCaseUtils {
 
     public static <T, R> void testCase(T input, Function<T, R> function, R expect) {
-        testCase(input, function, expect, null);
+        testCase(input, function, expect, null, null);
     }
 
     public static <T, R> void testCase(T input, Function<T, R> function, R expect, Function<T, String> inputFormat) {
+        testCase(input, function, expect, inputFormat, null);
+    }
+
+    public static <T, R> void testCaseEq(T input, Function<T, R> function, R expect, BiFunction<R, R, Boolean> equalizer) {
+        testCase(input, function, expect, null, equalizer);
+    }
+
+    public static <T, R> void testCase(T input, Function<T, R> function, R expect, Function<T, String> inputFormat, BiFunction<R, R, Boolean> equalizer) {
         System.out.println();
         String inputStr = inputFormat != null ? inputFormat.apply(input) : input.toString();
         System.out.println("input : " + inputStr);
         R result = function.apply(input);
         System.out.println("result = " + result);
         System.out.println("expect = " + expect);
-        boolean pass = (Objects.equals(result, expect));
+        boolean pass = equalizer != null ? equalizer.apply(result, expect) : Objects.equals(result, expect);
         System.out.println("pass : " + pass);
         assert pass;
         System.out.println("-----------------------------------------------------------------------------------------");
     }
 
-    public static <T, S, R> void testCase(T input1, S input2, BiFunction<T, S, R> function, R expect) {
-        testCase(input1, input2, function, expect, null, null, null);
+    public static <T, S, R> void testCaseTwo(T input1, S input2, BiFunction<T, S, R> function, R expect) {
+        testCaseTwo(input1, input2, function, expect, null, null, null);
     }
 
-    public static <T, S, R> void testCase(T input1, S input2, BiFunction<T, S, R> function, R expect,
-                                          Function<T, String> inputFormat1, Function<S, String> inputFormat2) {
-        testCase(input1, input2, function, expect, inputFormat1, inputFormat2, null);
+    public static <T, S, R> void testCaseTwo(T input1, S input2, BiFunction<T, S, R> function, R expect,
+                                             Function<T, String> inputFormat1, Function<S, String> inputFormat2) {
+        testCaseTwo(input1, input2, function, expect, inputFormat1, inputFormat2, null);
     }
 
-    public static <T, S, R> void testCase(T input1, S input2, BiFunction<T, S, R> function, R expect,
-                                          Function<T, String> inputFormat1, Function<S, String> inputFormat2, Function<R, String> resultFormat) {
+    public static <T, S, R> void testCaseTwo(T input1, S input2, BiFunction<T, S, R> function, R expect,
+                                             Function<T, String> inputFormat1, Function<S, String> inputFormat2, Function<R, String> resultFormat) {
         System.out.println();
         String input1Str = inputFormat1 != null ? inputFormat1.apply(input1) : input1.toString();
         String input2Str = inputFormat2 != null ? inputFormat2.apply(input2) : input2.toString();
