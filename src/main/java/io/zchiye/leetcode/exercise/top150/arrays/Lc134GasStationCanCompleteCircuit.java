@@ -37,7 +37,8 @@ public class Lc134GasStationCanCompleteCircuit {
     public static void main(String[] args) {
         Solution solution = new Solution();
         List<TwoInputTestCase.Params<int[], int[], Integer>> params = List.of(
-                new TwoInputTestCase.Params<>(new int[]{1, 2, 3, 4, 5}, new int[]{3, 4, 5, 1, 2}, 3)
+                new TwoInputTestCase.Params<>(new int[]{1, 2, 3, 4, 5}, new int[]{3, 4, 5, 1, 2}, 3),
+                new TwoInputTestCase.Params<>(new int[]{2, 3, 4}, new int[]{3, 4, 3}, -1)
         );
         TestCase testCase = new TwoInputTestCase<>(params, solution::canCompleteCircuit, Arrays::toString, Arrays::toString, null, null);
         testCase.test();
