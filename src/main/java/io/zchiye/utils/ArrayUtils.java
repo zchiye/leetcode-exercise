@@ -1,5 +1,7 @@
 package io.zchiye.utils;
 
+import java.util.List;
+
 public class ArrayUtils {
 
     public static boolean equals(int[] arr1, int[] arr2) {
@@ -21,6 +23,12 @@ public class ArrayUtils {
             nums[end] = temp;
             start++;
             end--;
+        }
+    }
+
+    public static void printStringLines(List<String> list) {
+        for (String s : list) {
+            System.out.println(s);
         }
     }
 }
